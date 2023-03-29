@@ -1,0 +1,132 @@
+body {
+  min-height : 100vh;
+  background: linear-gradient(
+               to right, 
+               #8B8A8A,
+               #323131
+  );
+  padding: 1rem .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+
+/* Styles the container for the to-do list, centering it on the page */
+.to-do-container{
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles the input container for adding new tasks */
+.to-do-container .input-container{
+  background: white;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  display: flex;
+  width: 285px;
+  justify-content: space-between;
+}
+
+/* Styles the input field for adding new tasks */
+.to-do-container .input-container input{
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+/* Adds a border to the input container when it is focused */
+form:focus-within .input-container{
+  border: 2px solid #000000;
+}
+
+/* Styles the button for adding new tasks */
+.to-do-container .input-container .addTask{
+  padding: 5px 10px;
+  background: none;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Styles the button for adding new tasks when hovered over */
+.to-do-container .input-container .addTask:hover{
+  background: black;
+  color: white;
+}
+
+/* Styles the container for the list of tasks */
+#task-ol{
+  margin: 1rem;
+  background: #1A1A1A;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  padding:.7rem;
+  gap: .7rem;
+  width: 90%;
+  border-radius: 5px;
+}
+
+/* Styles each individual task in the list */
+#task-ol .task-list-li {
+  background: #3C3939;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  gap: 1rem;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  white-space: normal;
+  text-align: left;
+  word-break: break-all;
+  line-height: 25px;
+}
+/* Adds a line-through style to a completed task */
+#task-ol .task-list-li .striked{
+  text-decoration: line-through;
+}
+
+/* Styles the container for the buttons on each task */
+#task-ol .task-list-li .buttons-div{
+  display: flex;
+  text-decoration: none;
+}
+
+/* Styles the button for completing or uncompleting a task */
+#task-ol .task-list-li .buttons-div .task-btns{
+  background: none;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 5px 6px;
+  margin-left: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Styles the button for completing or uncompleting a task when it is already completed */
+#task-ol .task-list-li .buttons-div .task-btns.checked{
+  background: white;
+  color: black;
+  text-decoration: none;
+}
+
+
+@media (max-width: 555px){
+  .to-do-container{
+    width: 100%;
+  }
+}

@@ -68,13 +68,13 @@ form.addEventListener('submit', (event) => {
 
 // Saves tasks to local storage
 function saveTasks() {
-  const tasks = Array.from(taskOl.children).map((li) => li.querySelector('span').innerText.slice(2));
+  const tasks = Array.from(taskOl.children).map(li => li.querySelector('span').innerText.slice(2));
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 // Saves striked classes to local storage 
 function addStrikedClass(){
-  const isStriked = Array.from(taskOl.children).map((li) => li.querySelector('span').classList.contains('striked'));
+  const isStriked = Array.from(taskOl.children).map(li => li.querySelector('span').classList.contains('striked'));
   localStorage.setItem('strikedClass', JSON.stringify(isStriked));
 }
 

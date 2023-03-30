@@ -5,7 +5,7 @@ body {
                #8B8A8A,
                #323131
   );
-  padding: 1rem .5rem;
+  padding: 1rem .3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,13 +68,13 @@ form:focus-within .input-container{
 
 /* Styles the container for the list of tasks */
 #task-ol{
-  margin: 1rem;
+  margin: 1rem 0;
   background: #1A1A1A;
   display: flex;
   flex-direction: column;
   justify-items: center;
   padding:.7rem;
-  gap: .7rem;
+  gap: 1rem;
   width: 90%;
   border-radius: 5px;
 }

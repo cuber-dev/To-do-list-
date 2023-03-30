@@ -116,11 +116,11 @@ function typeNextCharacter() {
     const nextCharacter = placeHolders[currentPlaceholderIndex].charAt(currentCharacterIndex);
     taskInput.placeholder = currentText + nextCharacter;
     currentCharacterIndex++;
-    timeoutId = setTimeout(typeNextCharacter, 100);
+    timeoutId = setTimeout(typeNextCharacter, 150);
   } else {
     clearTimeout(timeoutId);
     currentCharacterIndex = 0;
-    currentPlaceholderIndex = (currentPlaceholderIndex + 1) % placeHolders.length;
+    currentPlaceholderIndex = (currentPlaceholderIndex + 1) < placeHolders.length ? currentPlaceholderIndex + 1 : 0;
     setTimeout(changePlaceHolder, 1000 * 5); 
   }
 }

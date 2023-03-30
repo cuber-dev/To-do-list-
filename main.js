@@ -90,7 +90,7 @@ function loadTasks(){
   });
   
   // Checks for striked tasks
-  const strikedClass = JSON.parse(localStorage.getItem('strikedClass'));
+  const strikedClass = JSON.parse(localStorage.getItem('strikedClass')) || [];
   strikedClass.forEach((isStriked, i) => {
     if(isStriked){
       taskOl.children[i].children[1].children[0].click();
@@ -100,8 +100,9 @@ function loadTasks(){
 
 // Retrieve tasks from local storage and add them to task list
 window.addEventListener('load',() => {
-  loadTasks();
-  setTimeout(() => {
-    document.body.querySelector('.loader-main').classList.remove('loader');
-  },1500);
+    loadTasks();
+    
+    setTimeout(() => {
+      document.body.querySelector('.loader-main').classList.remove('loader');
+    },1500);
 });

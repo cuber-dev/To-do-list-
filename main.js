@@ -102,7 +102,4 @@ function loadTasks(){
 window.addEventListener('load',() => {
     loadTasks();
     
-    setTimeout(() => {
-      document.body.querySelector('.loader-main').classList.remove('loader');
-    },1500);
 });

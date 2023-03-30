@@ -103,5 +103,5 @@ window.addEventListener('load',() => {
   loadTasks();
   setTimeout(() => {
     document.body.querySelector('.loader').classList.remove('loader');
-  },2000);
+  },1500);
 });

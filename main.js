@@ -102,3 +102,32 @@ window.addEventListener('load',() => {
     loadTasks();
     
 });
+
+
+
+const placeHolders = ['What\'s on your agenda for today?', 'What tasks do you need to complete?', 'What are your priorities for today?', 'What do you need to accomplish today?'];
+let currentPlaceholderIndex = 0;
+let currentCharacterIndex = 0;
+let timeoutId;
+
+function typeNextCharacter() {
+  if (currentCharacterIndex < placeHolders[currentPlaceholderIndex].length) {
+    const currentText = taskInput.placeholder;
+    const nextCharacter = placeHolders[currentPlaceholderIndex].charAt(currentCharacterIndex);
+    taskInput.placeholder = currentText + nextCharacter;
+    currentCharacterIndex++;
+    timeoutId = setTimeout(typeNextCharacter, 100);
+  } else {
+    clearTimeout(timeoutId);
+    currentCharacterIndex = 0;
+    currentPlaceholderIndex = (currentPlaceholderIndex + 1) % placeHolders.length;
+    setTimeout(changePlaceHolder, 1000 * 5); 
+  }
+}
+
+function changePlaceHolder() {
+  taskInput.placeholder = '';
+  typeNextCharacter();
+}
+
+changePlaceHolder(); 

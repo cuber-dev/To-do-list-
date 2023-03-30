@@ -92,7 +92,7 @@ form:focus-within .input-container{
   font-size: 15px;
   white-space: normal;
   text-align: left;
-  word-break: break-all;
+  word-break: break-word;
   line-height: 25px;
 }
 /* Adds a line-through style to a completed task */

@@ -121,7 +121,7 @@ function typeNextCharacter() {
     clearTimeout(timeoutId);
     currentCharacterIndex = 0;
     currentPlaceholderIndex = (currentPlaceholderIndex + 1) < placeHolders.length ? currentPlaceholderIndex + 1 : 0;
-    setTimeout(changePlaceHolder,1000 * 5);
+    setTimeout(changePlaceHolder,1000 * 10);
   }
 }
 function changePlaceHolder(){

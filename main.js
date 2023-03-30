@@ -28,7 +28,6 @@ function addTaskList(task) {
     taskNameSpan.classList.toggle('striked');
     taskCompleteBtn.classList.toggle('checked');
     addStrikedClass();
-    saveTasks();
   });
 
   taskDeleteBtn.addEventListener('click', () => {

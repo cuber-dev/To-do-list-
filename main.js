@@ -111,23 +111,22 @@ let currentCharacterIndex = 0;
 let timeoutId;
 
 function typeNextCharacter() {
-  if (currentCharacterIndex < placeHolders[currentPlaceholderIndex].length) {
-    const currentText = taskInput.placeholder;
-    const nextCharacter = placeHolders[currentPlaceholderIndex].charAt(currentCharacterIndex);
-    taskInput.placeholder = currentText + nextCharacter;
+  if (currentCharacterIndex < placeHolders[currentPlaceholderIndex].length){
+    let currentText = taskInput.placeholder;
+    let nextChar = placeHolders[currentPlaceholderIndex].charAt(currentCharacterIndex);
+    taskInput.placeholder = currentText + nextChar;
     currentCharacterIndex++;
-    timeoutId = setTimeout(typeNextCharacter, 150);
-  } else {
+    timeoutId = setTimeout(typeNextCharacter,100);
+  }else{
     clearTimeout(timeoutId);
     currentCharacterIndex = 0;
     currentPlaceholderIndex = (currentPlaceholderIndex + 1) < placeHolders.length ? currentPlaceholderIndex + 1 : 0;
-    setTimeout(changePlaceHolder, 1000 * 5); 
+    setTimeout(changePlaceHolder,1000 * 5);
   }
 }
-
-function changePlaceHolder() {
+function changePlaceHolder(){
   taskInput.placeholder = '';
   typeNextCharacter();
 }
 
-changePlaceHolder(); 
+changePlaceHolder();

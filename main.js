@@ -99,4 +99,9 @@ function loadTasks(){
 }
 
 // Retrieve tasks from local storage and add them to task list
-window.addEventListener('load',loadTasks);
+window.addEventListener('load',() => {
+  loadTasks();
+  setTimeout(() => {
+    document.body.querySelector('.loader').classList.remove('loader');
+  },1500);
+});
